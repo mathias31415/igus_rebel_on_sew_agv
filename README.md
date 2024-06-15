@@ -4,10 +4,14 @@ This is our main repo for the Igus Rebel robot (open source variant) an a SEW AG
 ## Overview
 TODO
 
-## Repo structure 
+## Video
 TODO
 
-## How-To
+## Repo structure 
+All ros2 packages of this project are linked in the folder [ros2-packages](https://github.com/mathias31415/igus_rebel_on_sew_agv/tree/main/ros2-packages).
+TODO
+
+## How-To use
 TODO
 
 ## TODOs
