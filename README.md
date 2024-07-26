@@ -23,7 +23,7 @@ This repository contains the code for controlling the Igus Rebel robot mounted o
 ### [sew_maxo_mts_and_igus_rebel](https://github.com/RobinWolf/sew_maxo_mts_and_igus_rebel)
 This repository contains the Gazebo simulation for simulating the AGV with the robot picking boxes in a simulated warehouse.
 
-For more detailed documentation, please refer to the README files of the respective repositories or visit our (german) [documentation]().
+For more detailed documentation, please refer to the README files of the respective repositories or visit our (German) [documentation]().
 
 
 <a name="video"/>
@@ -36,42 +36,42 @@ TODO
 <a name="howto"/>
 
 ## How to use the AGV and the robot
-Um das Agv mit dem roboter zu nutzen, muss das agv und der roboter in der vorgegebenen reihenfolge eingeschalten werden. Auf dem Rasperry pi, der sich im fuß des roboters befindet wird automatisch alles eingerichtet und die ros packages gelauncht. WEnn der raspi fertig gebootet hat kann man sich mit einem weiteren pc (mit ubuntu betriebssystem) mit dem vom raspi aufgemachten wifi verbinden. Das wifi heist `AGV` und das passwort ist `agv12345`. Auf dem pc können nun die beiden docker container gebaut und gestartet werden. Während dem bauen wird eine Internetverbindung benötigt. Erst nach dem starten des docker containers sollte man sich mit dem `AGV` wifi verbinden. Im `igus_rebel_ros2_docker` docker container muss dann RViz gestartet werden, im `sew_maxo_mts_ros2` docker container muss das launchfile für den joystick gelauncht werden. Um dan Roboter und das agv wieder auszuschalten, muss wieder die vorgegebene reihenfolg eingehalten werden.
+To use the AGV with the robot, the AGV and the robot must be turned on in the specified order. The Raspberry Pi, located in the base of the robot, automatically sets everything up and launches the ROS packages. Once the Raspberry Pi has finished booting, you can connect to the Wi-Fi created by the Raspberry Pi using another PC running Ubuntu. The Wi-Fi is named `AGV` and the password is `agv12345`. On the PC, you can then build and start the two Docker containers. An internet connection is required during the build process. Only after starting the Docker containers should you connect to the `AGV` Wi-Fi. In the `igus_rebel_ros2_docker` Docker container, RViz must be started, and in the `sew_maxo_mts_ros2` Docker container, the launch file for the joystick must be launched. To turn off the robot and the AGV, the specified order must be followed again.
 
-### 1. AGV und Roboter einschalten
+### 1. Turn on the AGV and the robot
 
 <img src="doc/switches_back.png" alt="switches" height="400"/> <img src="doc/switches_robot.png" alt="reboot" height="250"/>
 
-1. Stelle sicher, dass roboter hauptschalter ausgeschaltet ist (Achtung: Ausgeschaltet ist die Schalterstellung senkrecht ( | ) und eingeschaltet waagrecht ( – ))
-2. pull the agv emergency-stop
-3. turn on the AGV by pressing and holding the green and blue button for a few seconds
-4. The display is now turning on and the green button is lit up.
-5. Ziehe den roboter emergency stop falls er gedrückt ist
-6. Schalte den roboter haptschalter ein
-7. Sobald der raspi vollständig gebootet hat ist das wifi `AGV` sichtbar, der grüne button leuchtet nichtmehr und auf dem display steht unten rechts in einem blauen kästchen `RC`. Der roboter summt leise und aktiviert die einzelnen achsen, was durch ein klicken wahrnehmbar ist.
-8. Wenn es zu fehlern kommt, kann der raspi über den reboot knopf im roboterfuß neu gestartet werden. Ein reboot ist auch notwendig, wenn der nothalt des roboters betätigt wurde.
+1. Make sure the robot main switch is turned off (Note: The off position is the vertical switch position ( | ) and the on position is the horizontal switch position ( – )).
+2. Pull the AGV emergency stop.
+3. Turn on the AGV by pressing and holding the green and blue buttons for a few seconds.
+4. The display will turn on and the green button will light up.
+5. Release the robot emergency stop if it is pressed.
+6. Turn on the robot main switch.
+7. Once the Raspberry Pi has fully booted, the `AGV` Wi-Fi will be visible, the green button will no longer be lit, and the display will show `RC` in a blue box at the bottom right. The robot will make a quiet humming sound and activate the individual axes, which can be heard as a clicking sound.
+8. If there are any errors, the Raspberry Pi can be rebooted using the reboot button in the robot base. A reboot is also necessary if the robot emergency stop has been activated.
 
-### 2. Docker container bauen und starten
-1. Clone die beiden repos:
+### 2. Build and start the Docker containers
+1. Clone the two repositories:
 ```
 git clone https://github.com/mathias31415/igus_rebel_ros2_docker.git
 git clone https://github.com/RobinWolf/sew_maxo_mts_ros2.git
 ```
-(Stelle sicher, dass du dich auf dem richtigen branch befindest (mit `git checkout <branchname>`))
+(Make sure you are on the correct branch (use `git checkout <branchname>`))
 
-2. Baue und starte die beiden docker container, indem du in das entsprechende verzeichnis navigierst (mit `cd`) und dann die skripte zum bauen und starten des containers ausführst. Dafür musst du mit dem internet verbunden sein.
+2. Build and start the two Docker containers by navigating to the respective directories (using `cd`) and then executing the scripts to build and start the containers. You need to be connected to the internet for this.
 ```
 ./build_docker.sh
 ./start_docker.sh
 ```
-3. Gehe aus dem jeweiligen docker container wieder heraus, indem du CTRL + C drückst. Der dockercontainer läuft im hintergrund weiter.
+3. Exit the respective Docker container by pressing CTRL + C. The Docker container will continue running in the background.
 
 
-### 3. Mit dem wifi des raspberry pi verbinden
-Verbinde deinen PC mit dem `AGV` wifi, das vom raspi aufgemacht wird. Das passwort ist `agv12345`.
+### 3. Connect to the Raspberry Pi's Wi-Fi
+Connect your PC to the `AGV` Wi-Fi created by the Raspberry Pi. The password is `agv12345`.
 
-### 4. RViz im `igus_rebel_ros2_docker` docker container starten
-1. Verbinde dich wieder mit dem `igus_rebel_ros2_docker` docker container
+### 4. Start RViz in the `igus_rebel_ros2_docker` Docker container
+1. Reconnect to the `igus_rebel_ros2_docker` Docker container
 ```
 docker exec -it igus_rebel bash
 ```
@@ -79,15 +79,14 @@ docker exec -it igus_rebel bash
 ```
 source install/setup.bash
 ```
-3. Starte RViz 
+3. Start RViz 
 ```
 ros2 launch irc_ros_bringup rviz.launch.py
 ```
-Du kannst nun über RViz den Roboterarm bewegen
+You can now use RViz to move the robot arm.
 
-
-### 5. Joystick im `sew_maxo_mts_ros2` docker container nutzen
-1. Verbinde dich wieder mit dem `sew_maxo_mts_ros2` docker container
+### 5. Use the joystick in the `sew_maxo_mts_ros2` Docker container
+1. Reconnect to the `sew_maxo_mts_ros2` Docker container
 ```
 docker exec -it sew_navigation bash
 ```
@@ -95,17 +94,15 @@ docker exec -it sew_navigation bash
 ```
 source install/setup.bash
 ```
-3. Starte das Joystick launchfile 
+3. Launch the joystick launch file 
 ```
 ros2 launch sew_agv_navigation joystick.launch.py
 ```
 
-### 6. AGV und Roboter ausschalten
-1. Dücke den roboter nothalt, um die 24V Spannungsversorgung des roboters wegzunehmen (die Logigspannung bleibt erhalten)
-2. Schalte den Roboter hauptschalter aus
-3. push the AGV emergency-stop
-4. turn of the AGV by pressing and holding the green and blue button for a few seconds
-5. The display turns off and the buttons stop lighting up.
-
-
+### 6. Turn off the AGV and the robot
+1. Press the robot emergency stop to remove the 24V power supply from the robot (the logic voltage remains).
+2. Turn off the robot main switch.
+3. Push the AGV emergency stop.
+4. Turn off the AGV by pressing and holding the green and blue buttons for a few seconds.
+5. The display will turn off and the buttons will stop lighting up.
 
