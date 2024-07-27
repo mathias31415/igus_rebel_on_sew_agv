@@ -73,7 +73,7 @@ Connect your PC to the `AGV` Wi-Fi created by the Raspberry Pi. The password is 
 ### 4. Start RViz in the `igus_rebel_ros2_docker` Docker container
 1. Reconnect to the `igus_rebel_ros2_docker` Docker container
 ```
-docker exec -it igus_rebel bash
+docker exec -it igusrebel bash
 ```
 2. Source 
 ```
