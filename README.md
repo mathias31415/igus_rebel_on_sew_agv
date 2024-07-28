@@ -29,9 +29,9 @@ For more detailed documentation, please refer to the README files of the respect
 <a name="video"/>
 
 ## Video
-This [YouTube video]() shows the results of our project work:
+This [YouTube video](https://www.youtube.com/watch?v=gt0W6JzLThg) shows the results of our project work:
 
-TODO
+[![play_video](doc/yt_thumbnail.png)](https://www.youtube.com/watch?v=gt0W6JzLThg)
 
 <a name="howto"/>
 
