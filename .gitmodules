@@ -1,9 +1,12 @@
 [submodule "ros2-packages/sew_maxo_mts_ros2"]
 	path = ros2-packages/sew_maxo_mts_ros2
 	url = https://github.com/RobinWolf/sew_maxo_mts_ros2.git
+	branch = dev
 [submodule "ros2-packages/sew_maxo_mts_and_igus_rebel"]
 	path = ros2-packages/sew_maxo_mts_and_igus_rebel
 	url = https://github.com/RobinWolf/sew_maxo_mts_and_igus_rebel.git
+	branch = main
 [submodule "ros2-packages/igus_rebel_ros2_docker"]
 	path = ros2-packages/igus_rebel_ros2_docker
 	url = https://github.com/mathias31415/igus_rebel_ros2_docker.git
+	branch = humble
