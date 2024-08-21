@@ -85,6 +85,11 @@ ros2 launch irc_ros_bringup rviz.launch.py
 ```
 You can now use RViz to move the robot arm.
 
+4. Optional: Start a Python Control Script
+```
+ros2 run robot_application video 
+```
+
 ### 5. Use the joystick in the `sew_maxo_mts_ros2` Docker container
 1. Reconnect to the `sew_maxo_mts_ros2` Docker container (in a second terminal)
 ```
