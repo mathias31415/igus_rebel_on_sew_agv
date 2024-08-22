@@ -23,7 +23,7 @@ This repository contains the code for controlling the Igus Rebel robot mounted o
 ### [sew_maxo_mts_and_igus_rebel](https://github.com/RobinWolf/sew_maxo_mts_and_igus_rebel)
 This repository contains the Gazebo simulation for simulating the AGV with the robot picking boxes in a simulated warehouse.
 
-For more detailed documentation, please refer to the README files of the respective repositories or visit our (German) [documentation]().
+For more detailed documentation, please refer to the README files of the respective repositories or visit our (German) [documentation](https://github.com/mathias31415/igus_rebel_on_sew_agv/blob/main/Doku_SEW_AGV_und_Igus_ReBeL_GitHub.pdf).
 
 
 <a name="video"/>
